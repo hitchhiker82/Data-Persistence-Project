@@ -81,6 +81,7 @@ public class MainManager : MonoBehaviour
             MainDataManager.Instance.bestScore = m_Points;
             MainDataManager.Instance.nameTheBest = MainDataManager.Instance.userName;
         }
+        BestScoreText.text = "Best Score : " + MainDataManager.Instance.nameTheBest + ": " + MainDataManager.Instance.bestScore;
         MainDataManager.Instance.SaveScore();
     }
 }
