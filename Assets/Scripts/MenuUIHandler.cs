@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using UnityEngine.UI;
 
 public class MenuUIHandler : MonoBehaviour
 {
+
+    public string userName;
+    public GameObject inputField;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +25,8 @@ public class MenuUIHandler : MonoBehaviour
 
     public void StartNew()
     {
+        userName = inputField.GetComponent<Text>().text;
+        MainDataManager.Instance.userName = userName;
         SceneManager.LoadScene(1);
     }
 
